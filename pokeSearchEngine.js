@@ -18,17 +18,16 @@ var pokemon = [
     [17, 'Pidgeotto', 'This Pokémon is full of vitality. It constantly flies around its large territory in search of prey.'],
     [18, 'Pidgeot', 'This Pokémon flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons.'],
     [19, 'Rattata', 'Will chew on anything with its fangs. If you see one, you can be certain that 40 more live in the area.'],
-    [20, 'Raticate', 'Its hind feet are webbed. They act as flippers, so it can swim in rivers and hunt for prey.'],
-    "2"
+    [20, 'Raticate', 'Its hind feet are webbed. They act as flippers, so it can swim in rivers and hunt for prey.']
 ]
 var rNPokemon = [];
 var rLPokemon = [];
-function retrieveByName(...pokemon) {
-    
-    arg = pokemon[20].toLowerCase();
+function searchEngine(type, arg){
+}
+function retrieveByName(arg) {
     var lPokemon;
     
-    for (var i = 0; i< 20; i++){
+    for (var i = 0; i< pokemon.length; i++){
         lPokemon = pokemon[i][1].substring(0,arg.length).toLowerCase();
 
         if(arg == lPokemon){
@@ -38,16 +37,38 @@ function retrieveByName(...pokemon) {
      return rLPokemon;
  }
 
- function retrieveByNumber(...pokemon){
-    var arg = pokemon[20].toString();
+ function retrieveByNumber(arg){
+    var arg;
     var rNPokemon = [];
     var nPokemon;
     
-    for (var i = 0; i<20; i++){
+    for (var i = 0; i<pokemon.length; i++){
         nPokemon = pokemon[i][0].toString();
         if(nPokemon.includes(arg)){
             rNPokemon.push(i);
         }
     }
     return rNPokemon;
+ }
+ function validateSearch(type, arg){
+
+    
+    if(type == "nSearch"){
+        if(typeof arg != "number"){
+            return "invalidCharacters";
+        }
+        else if(arg > 20 || arg < 0){
+            return "invalidOutOfRange";
+        }
+        else return "valid";
+    }  
+    if(type == "lSearch"){
+        if(!(/^[a-zA-Z]+$/.test(arg))){
+            return "invalidCharacters";
+        }
+        else if(arg.length > 20 || arg.length == 0){
+            return "invalidLength";
+        }
+        else return "valid";
+    }    
  }
