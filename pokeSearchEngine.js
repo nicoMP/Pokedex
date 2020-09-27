@@ -1,4 +1,4 @@
-let pokemon = [
+var pokemon = [
     [1, 'Bulbasaur', 'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.'],
     [2, 'Ivysaur', 'When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.'],
     [3, 'Venusaur', 'Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.'],
@@ -19,21 +19,35 @@ let pokemon = [
     [18, 'Pidgeot', 'This Pokémon flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons.'],
     [19, 'Rattata', 'Will chew on anything with its fangs. If you see one, you can be certain that 40 more live in the area.'],
     [20, 'Raticate', 'Its hind feet are webbed. They act as flippers, so it can swim in rivers and hunt for prey.'],
-    "raT"
+    "2"
 ]
+var rNPokemon = [];
+var rLPokemon = [];
 function retrieveByName(...pokemon) {
     
     arg = pokemon[20].toLowerCase();
-    var rPokemon = [];
+    var lPokemon;
     
     for (var i = 0; i< 20; i++){
-        console.log(arg + ", " + pokemon[i][1].substring(0,arg.length));
-        var tPokemon = pokemon[i][1].substring(0,arg.length).toLowerCase();
+        lPokemon = pokemon[i][1].substring(0,arg.length).toLowerCase();
 
-        if(arg == tPokemon){
-                rPokemon.push(i)
+        if(arg == lPokemon){
+                rLPokemon.push(i);
         }
      }
-     return rPokemon;
+     return rLPokemon;
  }
 
+ function retrieveByNumber(...pokemon){
+    var arg = pokemon[20].toString();
+    var rNPokemon = [];
+    var nPokemon;
+    
+    for (var i = 0; i<20; i++){
+        nPokemon = pokemon[i][0].toString();
+        if(nPokemon.includes(arg)){
+            rNPokemon.push(i);
+        }
+    }
+    return rNPokemon;
+ }
