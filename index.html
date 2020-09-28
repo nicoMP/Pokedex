@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link  rel ='stylesheet' href="pokeStyle.css">
 <meta charset="utf-8">
 <title>Pokedex</title>
 <meta name="description" content="Lab 1 SE3316">
@@ -10,10 +11,10 @@
 <body>
     <h1>Pokedex</h1>
             <p>A useful guide to the first 20 pokemon in the pokedex.</p>
-            <input type = "text" id="lSearch" placeholder = "Enter Name">
-            <button type = "submit" onclick= "submitSearch('lSearch')">Submit</button>
-            <input type = "text" id="nSearch" placeholder = "Enter Number">
-            <button type = "submit" onclick= "submitSearch('nSearch')">Submit</button>
+            <input type = "text" id="lSearch" placeholder = "Enter Name" class = "SearchBar">
+            <button type = "submit" onclick= "submitSearch('lSearch')" class = "SearchBar">Submit</button>
+            <input type = "text" id="nSearch" placeholder = "Enter Number" class = "SearchBar">
+            <button type = "submit" onclick= "submitSearch('nSearch')" class = "SearchBar">Submit</button>
     <ul>
         <li> 
             <table>

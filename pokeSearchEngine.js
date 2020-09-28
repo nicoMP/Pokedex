@@ -69,16 +69,18 @@ function retrieveByName(arg) {
  }
  function validateSearch(type, arg){
 
-    
+   
     if(type == "nSearch"){
-        arg = Number(arg);
-        if(typeof arg != "number"){
+        
+        if(isNaN(arg)){
             return "invalidCharacters";
         }
-        else if(arg > 20 || arg < 0){
+        else if(arg >20 || arg <0){
             return "invalidOutOfRange";
         }
-        else return "valid";
+        else{
+            return "valid";
+        }
     }  
     if(type == "lSearch"){
         if(!(/^[a-zA-Z]+$/.test(arg))){
@@ -92,13 +94,21 @@ function retrieveByName(arg) {
  }
 function toText(type, arg){
     var text;
+    var emptyArray = [];
     var selectedPokemon = searchEngine(type, arg);
     if(typeof selectedPokemon == "string"){
+        if (selectedPokemon.length==0){
+            return "No Results Founds";
+        }
         text = "Error: " + selectedPokemon;
         return text;
+        
     }
     else{
         text = "Results: \n"; 
+        if(selectedPokemon.length==0){
+            text = text.concat("No Results Found")
+        }
         for(var i = 0; i < selectedPokemon.length; i++){
            text = text.concat(pokemon[selectedPokemon[i]][0] + ". " + pokemon[selectedPokemon[i]][1]+ ": " + pokemon[selectedPokemon[i]][2] + "\n");
         }
@@ -109,3 +119,4 @@ function displaySearch(type, arg){
     var x = toText(type,arg);
     window.alert(x);
 }
+
