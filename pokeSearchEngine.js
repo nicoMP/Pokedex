@@ -1,3 +1,4 @@
+
 var pokemon = [
     [1, 'Bulbasaur', 'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.'],
     [2, 'Ivysaur', 'When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.'],
@@ -20,17 +21,31 @@ var pokemon = [
     [19, 'Rattata', 'Will chew on anything with its fangs. If you see one, you can be certain that 40 more live in the area.'],
     [20, 'Raticate', 'Its hind feet are webbed. They act as flippers, so it can swim in rivers and hunt for prey.']
 ]
-var rNPokemon = [];
-var rLPokemon = [];
+
 function searchEngine(type, arg){
+    var validity = validateSearch(type, arg);
+        if(validity == "valid"){
+            switch(type){
+                case "lSearch":
+                    return retrieveByName(arg);
+                case "nSearch":
+                     return retrieveByNumber(arg);
+                default:
+                return "Invalid Button";
+            }
+        }
+        else{ 
+        return validity;  
+        }
 }
 function retrieveByName(arg) {
+    var rLPokemon = [];
     var lPokemon;
     
     for (var i = 0; i< pokemon.length; i++){
         lPokemon = pokemon[i][1].substring(0,arg.length).toLowerCase();
 
-        if(arg == lPokemon){
+        if(arg.toLowerCase() == lPokemon){
                 rLPokemon.push(i);
         }
      }
@@ -38,6 +53,7 @@ function retrieveByName(arg) {
  }
 
  function retrieveByNumber(arg){
+    var rNPokemon = [];
     var arg;
     var rNPokemon = [];
     var nPokemon;
@@ -48,12 +64,14 @@ function retrieveByName(arg) {
             rNPokemon.push(i);
         }
     }
+    console.log(rNPokemon)
     return rNPokemon;
  }
  function validateSearch(type, arg){
 
     
     if(type == "nSearch"){
+        arg = Number(arg);
         if(typeof arg != "number"){
             return "invalidCharacters";
         }
@@ -72,3 +90,22 @@ function retrieveByName(arg) {
         else return "valid";
     }    
  }
+function toText(type, arg){
+    var text;
+    var selectedPokemon = searchEngine(type, arg);
+    if(typeof selectedPokemon == "string"){
+        text = "Error: " + selectedPokemon;
+        return text;
+    }
+    else{
+        text = "Results: \n"; 
+        for(var i = 0; i < selectedPokemon.length; i++){
+           text = text.concat(pokemon[selectedPokemon[i]][0] + ". " + pokemon[selectedPokemon[i]][1]+ ": " + pokemon[selectedPokemon[i]][2] + "\n");
+        }
+        return text;
+    }
+}
+function displaySearch(type, arg){
+    var x = toText(type,arg);
+    window.alert(x);
+}
