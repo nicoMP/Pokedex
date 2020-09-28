@@ -23,11 +23,11 @@ var pokemon = [
 ]
 
 function searchEngine(type, arg){
-    var validity = validateSearch(type, arg);
-        if(validity == "valid"){
+    var validity = validateSearch(type, arg);//uses validatesearch function to return validity
+        if(validity == "valid"){//it checks if it's a valid input then depending on the type calls the respective search functions
             switch(type){
                 case "lSearch":
-                    return retrieveByName(arg);
+                    return retrieveByName(arg);//either one returns and array with the adress in the pokemon array
                 case "nSearch":
                      return retrieveByNumber(arg);
                 default:
@@ -35,58 +35,55 @@ function searchEngine(type, arg){
             }
         }
         else{ 
-        return validity;  
+        return validity; //in case its not valid it just returns the error message
         }
 }
 function retrieveByName(arg) {
-    var rLPokemon = [];
+    var rLPokemon = [];//generates empty array to store adress in pokemon array
     var lPokemon;
     
-    for (var i = 0; i< pokemon.length; i++){
-        lPokemon = pokemon[i][1].substring(0,arg.length).toLowerCase();
+    for (var i = 0; i< pokemon.length; i++){//loop to check all pokemon in array
+        lPokemon = pokemon[i][1].substring(0,arg.length).toLowerCase();//retrieves the name and changes it to lowercase so it can compare and to have the same number of letters as input
 
         if(arg.toLowerCase() == lPokemon){
-                rLPokemon.push(i);
+                rLPokemon.push(i);//adds array if the letters match
         }
      }
-     return rLPokemon;
+     return rLPokemon;//returns the array
  }
 
  function retrieveByNumber(arg){
-    var rNPokemon = [];
-    var arg;
-    var rNPokemon = [];
+    var rNPokemon = [];//empty array for pokemon adress
     var nPokemon;
     
-    for (var i = 0; i<pokemon.length; i++){
-        nPokemon = pokemon[i][0].toString();
-        if(nPokemon.includes(arg)){
-            rNPokemon.push(i);
+    for (var i = 0; i<pokemon.length; i++){//loop to check all the pokemon
+        nPokemon = pokemon[i][0].toString();//changes pokemon number to string its already been validated at this point so should just be numbers
+        if(nPokemon.includes(arg)){//check if the number inputed is contained within any of the pokemon id
+            rNPokemon.push(i);//adds to array
         }
     }
-    console.log(rNPokemon)
-    return rNPokemon;
+    return rNPokemon;//returns array
  }
  function validateSearch(type, arg){
 
    
-    if(type == "nSearch"){
-        
-        if(isNaN(arg)){
+    if(type == "nSearch"){//depending on the type it is send it to first if or second if statements shouldve used switch statementhere tbh
+        //depending on the validity itll return an error message or valid
+        if(isNaN(arg)){//checks if its a number
             return "invalidCharacters";
         }
-        else if(arg >20 || arg <0){
+        else if(arg >20 || arg <0){//checks if its within range
             return "invalidOutOfRange";
         }
         else{
             return "valid";
         }
     }  
-    if(type == "lSearch"){
-        if(!(/^[a-zA-Z]+$/.test(arg))){
+    else if(type == "lSearch"){
+        if(!(/^[a-zA-Z]+$/.test(arg))){//checks that it only contains letters ofd the alphabet
             return "invalidCharacters";
         }
-        else if(arg.length > 20 || arg.length == 0){
+        else if(arg.length > 20 || arg.length == 0){//checks its under 20 characters
             return "invalidLength";
         }
         else return "valid";
@@ -94,29 +91,26 @@ function retrieveByName(arg) {
  }
 function toText(type, arg){
     var text;
-    var emptyArray = [];
-    var selectedPokemon = searchEngine(type, arg);
-    if(typeof selectedPokemon == "string"){
-        if (selectedPokemon.length==0){
-            return "No Results Founds";
-        }
-        text = "Error: " + selectedPokemon;
+    var selectedPokemon = searchEngine(type, arg);//return the adresses from search engine into an array
+    if(typeof selectedPokemon == "string"){//checks that it is an array or a string
+        text = "Error: " + selectedPokemon;//if its an error itll return an error message plus the specific error
         return text;
         
     }
     else{
-        text = "Results: \n"; 
-        if(selectedPokemon.length==0){
-            text = text.concat("No Results Found")
+        text = "Results: \n"; //just asthetic
+        if(selectedPokemon.length==0){//if string because it couldnt find anything returns no results found to be displayed
+            text = "No Results Found";
         }
-        for(var i = 0; i < selectedPokemon.length; i++){
+        for(var i = 0; i < selectedPokemon.length; i++){//goes through all the adresses
            text = text.concat(pokemon[selectedPokemon[i]][0] + ". " + pokemon[selectedPokemon[i]][1]+ ": " + pokemon[selectedPokemon[i]][2] + "\n");
+           //for every pokemon it adds its number name and desscritpion a text string with spaces
         }
-        return text;
+        return text;//returns string
     }
 }
 function displaySearch(type, arg){
-    var x = toText(type,arg);
+    var x = toText(type,arg);//sends this to a text
     window.alert(x);
 }
 
