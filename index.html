@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link  rel ='stylesheet' href="pokeStyle.css" type="text/css">
+<meta charset="utf-8">
+<title>Pokedex</title>
+<meta name="description" content="Lab 1 SE3316">
+<meta name="author" content="Nicolas Mateus">
+<link rel="stylesheet" href="">
+</head>
+<body>
+    <div class="container">
+    <h1>Pokedex</h1>
+            <p>A useful guide to the first 20 pokemon in the pokedex. Below are two search buttons to easily access names and descritptions</p>
+            <div class="searchBar">
+            <input type = "text" id="lSearch" placeholder = "Enter Name" class = "SearchBar">
+            <button type = "submit" onclick= "submitSearch('lSearch')" class = "SearchBar">Submit</button>
+            <input type = "text" id="nSearch" placeholder = "Enter Number" class = "SearchBar">
+            <button type = "submit" onclick= "submitSearch('nSearch')" class = "SearchBar">Submit</button>
+            </div>
+    <div class="list">
+    <ul>
+        <li> 
+            <table>
+                <tr>
+                    <h2>01Bulbasaur</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/1.png" alt = "Image of Bulbasaur"></a></td>
+                    <td class="descriptions">There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>02Ivysaur</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/2.png" alt = "Image of Ivysaur"></a></td>
+                    <td class="descriptions">When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>03Venusaur</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/3.png" alt = "Image of Venusaur"></a></td>
+                    <td class="descriptions">Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>04Charmander</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/4.png" alt = "Image of Charmander"></a></td>
+                    <td class="descriptions">It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>05Charmeleon</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/5.png" alt = "Image of Charmeleon"></a></td>
+                    <td class="descriptions">It has a barbaric nature. In battle, it whips its fiery tail around and slashes away with sharp claws.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>06Charizard</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/6.png" alt = "Image of Charizard"></a></td>
+                    <td class="descriptions">It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>07Squirtle</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/7.png" alt = "Image of Squirtle"></a></td>
+                    <td class="descriptions">When it retracts its long neck into its shell, it squirts out water with vigorous force.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>08Wartortle</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/8.png" alt = "Image of Wartortle"></a></td>
+                    <td class="descriptions">It is recognized as a symbol of longevity. If its shell has algae on it, that Wartortle is very old.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>09Blastoise</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/9.png" alt = "Image of Blastoise"></a></td>
+                    <td class="descriptions">It crushes its foe under its heavy body to cause fainting. In a pinch, it will withdraw inside its shell.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>10Caterpie</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/10.png" alt = "Image of Caterpie"></a></td>
+                    <td class="descriptions">For protection, it releases a horrible stench from the antenna on its head to drive away enemies.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>11Metapod</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/11.png" alt = "Image of Metapod"></a></td>
+                    <td class="descriptions">It is waiting for the moment to evolve. At this stage, it can only harden, so it remains motionless to avoid attack.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>12Butterfree</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/12.png" alt = "Image of Butterfree"></a></td>
+                    <td class="descriptions">In battle, it flaps its wings at great speed to release highly toxic dust into the air.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>13Weedle</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/13.png" alt = "Image of Weedle"></a></td>
+                    <td class="descriptions">Beware of the sharp stinger on its head. It hides in grass and bushes where it eats leaves.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>14Kakuna</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/14.png" alt = "Image of Kakuna"></a></td>
+                    <td class="descriptions">Able to move only slightly. When endangered, it may stick out its stinger and poison its enemy.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>15Beedrill</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/15.png" alt = "Image of Beedrill"></a></td>
+                    <td class="descriptions">It has three poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>16Pidgey</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/16.png" alt = "Image of Pidgey"></a></td>
+                    <td class="descriptions">Very docile. If attacked, it will often kick up sand to protect itself rather than fight back.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>17Pidgeotto</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/17.png" alt = "Image of Pidgeotto"></a></td>
+                    <td class="descriptions">This Pokémon is full of vitality. It constantly flies around its large territory in search of prey.</td>
+                </tr>
+            </table>
+        <li>
+            <table>
+                <tr>
+                    <h2>18Pidgeot</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/18.png" alt = "Image of Pidgeot"></a></td>
+                    <td class="descriptions">This Pokémon flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>19Rattata</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/19.png" alt = "Image of Rattata"></a></td>
+                    <td class="descriptions">Will chew on anything with its fangs. If you see one, you can be certain that 40 more live in the area.</td>
+                </tr>
+            </table>
+        <li> 
+            <table>
+                <tr>
+                    <h2>20Raticate</h2>
+                    <td><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "PokePics/pokemon/20.png" alt = "Image of Raticate"></a></td>
+                    <td class="descriptions">Its hind feet are webbed. They act as flippers, so it can swim in rivers and hunt for prey.</td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+    </div>
+    </div>
+    <p id = "imageRef">Click <a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset">here</a> for the images source</p>
+    <p id = "desRef">Click <a href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/">here</a> for the descriptions source.</p>
+    <script type = "text/javascript"> 
+    function submitSearch(type){
+       var y = document.getElementById(type).value;
+       document.getElementById(type).value = "";
+       displaySearch(type, y);
+    }
+    </script>
+    <script type="text/javascript" src = "pokeSearchEngine.js"></script>
+</body>
+</html>
+ 
