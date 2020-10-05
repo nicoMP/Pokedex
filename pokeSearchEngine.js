@@ -12,7 +12,7 @@ var pokemon = [
     [10, 'Caterpie', 'For protection, it releases a horrible stench from the antenna on its head to drive away enemies.'],
     [11, 'Metapod', 'It is waiting for the moment to evolve. At this stage, it can only harden, so it remains motionless to avoid attack.'],
     [12, 'Butterfree', 'In battle, it flaps its wings at great speed to release highly toxic dust into the air.'],
-    [13, 'Weedle', 'In battle, it flaps its wings at great speed to release highly toxic dust into the air.'],
+    [13, 'Weedle', 'Beware of the sharp stinger on its head. It hides in grass and bushes where it eats leaves.'],
     [14, 'Kakuna', 'Able to move only slightly. When endangered, it may stick out its stinger and poison its enemy.'],
     [15, 'Beedrill', 'It has three poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.'],
     [16, 'Pidgey', 'Very docile. If attacked, it will often kick up sand to protect itself rather than fight back.'],
