@@ -133,26 +133,26 @@ function createTable(index){
     for (var i = 0; i < index.length;i++){
         var sel = index[i];
         var x = document.createElement("LI");
-        list.appendChild(x);
+        list.appendChild(x);;
+        var pic = document.createElement("IMG")
+        pic.setAttribute("class", "dynamicPic");
+        pic.src = pokemon[sel][3]
+        x.appendChild(pic);
         var t = document.createElement("TABLE");
         t.setAttribute("class", "dTable");
         x.appendChild(t);
         var tr = document.createElement("TR");
         t.appendChild(tr);
-        var picT = document.createElement("TD");
-        tr.appendChild(picT);
-        var pic = document.createElement("IMG")
-        pic.src = pokemon[sel][3]
-        picT.appendChild(pic);
         var id = document.createElement("TD");
+        id.setAttribute("class", "number")
         id.innerText = pokemon[sel][0];
         tr.appendChild(id);
         var n = document.createElement("TD");
-        n.setAttribute("class", "text")
+        n.setAttribute("class", "text");
         n.innerText = pokemon[sel][1];
         tr.appendChild(n);
         var d = document.createElement("TD");
-        d.setAttribute("class", "text");
+        d.setAttribute("class", "description");
         d.innerText = pokemon[sel][2];
         tr.appendChild(d);
     }
