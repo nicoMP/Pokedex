@@ -21,3 +21,73 @@ export var pokemon = [
     [19, 'Rattata', 'Will chew on anything with its fangs. If you see one, you can be certain that 40 more live in the area.','pokemon/19.png'],
     [20, 'Raticate', 'Its hind feet are webbed. They act as flippers, so it can swim in rivers and hunt for prey.','pokemon/20.png']
 ]
+function searchEngine(type, arg){
+    var validity = validateSearch(type, arg);//uses validatesearch function to return validity
+        if(validity == "valid"){//it checks if it's a valid input then depending on the type calls the respective search functions
+            switch(type){
+                case "lSearch":
+                    return retrieveByName(arg);//either one returns and array with the adress in the pokemon array
+                case "nSearch":
+                     return retrieveByNumber(arg);
+                default:
+                return "Invalid Button";
+            }
+        }
+        else{ 
+        return validity; //in case its not valid it just returns the error message
+        }
+}
+function retrieveByName(arg) {
+    var rLPokemon = [];//generates empty array to store adress in pokemon array
+    var lPokemon;
+    
+    for (var i = 0; i< pokemon.length; i++){//loop to check all pokemon in array
+        lPokemon = pokemon[i][1].toLowerCase();//retrieves the name and changes it to lowercase so it can compare and to have the same number of letters as input
+
+        if(lPokemon.includes(arg.toLowerCase())){
+                rLPokemon.push(i);//adds array if the letters match
+        }
+     }
+     return rLPokemon;//returns the array
+ }
+
+ function retrieveByNumber(arg){
+    var rNPokemon = [];//empty array for pokemon adress
+    var nPokemon;
+    
+    for (var i = 0; i<pokemon.length; i++){//loop to check all the pokemon
+        nPokemon = pokemon[i][0].toString();//changes pokemon number to string its already been validated at this point so should just be numbers
+        if(nPokemon.includes(arg)){//check if the number inputed is contained within any of the pokemon id
+            rNPokemon.push(i);//adds to array
+        }
+    }
+    return rNPokemon;//returns array
+ }
+ function validateSearch(type, arg){
+
+    if(arg == ""){return "emptyQuery";}
+    else if(type == "nSearch"){//depending on the type it is send it to first if or second if statements shouldve used switch statementhere tbh
+        //depending on the validity itll return an error message or valid
+        if(isNaN(arg)){//checks if its a number
+            return "invalidCharacters";
+        }
+        else if(arg >20 || arg <0){//checks if its within range
+            return "invalidOutOfRange";
+        }
+        else{
+            return "valid";
+        }
+    }  
+    else if(type == "lSearch"){
+        if(!(/^[a-zA-Z]+$/.test(arg))){//checks that it only contains letters ofd the alphabet
+            return "invalidCharacters";
+        }
+        else if(arg.length > 20 || arg.length == 0){//checks its under 20 characters
+            return "invalidLength";
+        }
+        else return "valid";
+    }    
+ }
+function createTable(type, arg){
+    alert(arg);
+}

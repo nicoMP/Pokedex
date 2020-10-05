@@ -12,10 +12,10 @@
         <h1>Pokedex</h1>
         <p>A useful guide to the first 20 pokemon in the pokedex. Below are two search buttons to easily access names and descritptions</p>
         <div class="searchBar">
-        <input type = "text" id="lSearch" placeholder = "Enter Name" class = "SearchBar">
+        <input type = "text" id="lSearch" placeholder = "Enter Name" class = "SearchBar" oninput="dynamicSearch('lSearch')">
         <button type = "submit" onclick= "submitSearch('lSearch')" class = "SearchBar">Submit</button>
-        <input type = "text" id="nSearch" placeholder = "Enter Number" class = "SearchBar">
-        <button type = "submit" onclick= "submitSearch('nSearch')" class = "SearchBar">Submit</button>
+        <input type = "text" id="nSearch" placeholder = "Enter Number" class = "SearchBar" oninput="dynamicSearch('nSearch')">
+        <button type = "submit" onclick= "submitSearch('nSearch')" class = "SearchBar" >Submit</button>
     </div>
     <div class="list">
     <ul>
@@ -208,6 +208,10 @@
     <p id = "imageRef">Click <a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset">here</a> for the images source</p>
     <p id = "desRef">Click <a href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/">here</a> for the descriptions source.</p>
     <script> 
+    function dynamicSearch(type){
+        var y = document.getElementById(type).value;
+        createTable(type, y)
+    } 
     function submitSearch(type){
        var y = document.getElementById(type).value;
        document.getElementById(type).value = "";
@@ -215,6 +219,7 @@
     }
     </script>
     <script src = "pokeSearchEngine.js"></script>
+    <script src= "dynamicSearch.js"></script>
 </body>
 </html>
  
