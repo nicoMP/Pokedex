@@ -126,20 +126,21 @@ function displayTable(type, arg){
 }
 
 function createTable(index){
-    alert("hi?");
     var container = document.getElementById("dynamicSearch");
     var list = document.createElement("OL");
+    list.setAttribute("class", "container");
     container.appendChild(list);
     for (var i = 0; i < index.length;i++){
         var sel = index[i];
         var x = document.createElement("LI");
         list.appendChild(x);
         var t = document.createElement("TABLE");
+        t.setAttribute("class", "dTable");
         x.appendChild(t);
         var tr = document.createElement("TR");
         t.appendChild(tr);
         var picT = document.createElement("TD");
-        t.appendChild(picT);
+        tr.appendChild(picT);
         var pic = document.createElement("IMG")
         pic.src = pokemon[sel][3]
         picT.appendChild(pic);
@@ -147,9 +148,11 @@ function createTable(index){
         id.innerText = pokemon[sel][0];
         tr.appendChild(id);
         var n = document.createElement("TD");
+        n.setAttribute("class", "text")
         n.innerText = pokemon[sel][1];
         tr.appendChild(n);
         var d = document.createElement("TD");
+        d.setAttribute("class", "text");
         d.innerText = pokemon[sel][2];
         tr.appendChild(d);
     }

@@ -76,9 +76,10 @@ table.static{
     border-bottom-left-radius: 9px;
     border-bottom-right-radius: 9px;
 }
-#dynamicSearch{
-    border: solid 5px black;
+ol.container{
+    border-style: none;
 }
-table{
-    margin-top: 0px;
+ol.container{
+    overflow: hidden;
+    background-color: peachpuff;
 }
