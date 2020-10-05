@@ -69,8 +69,11 @@ li{
     margin: 0%;
     width: 100%;
 }
-table{
+table.static{
     background-color: beige;
     border-bottom-left-radius: 9px;
     border-bottom-right-radius: 9px;
+}
+#dynamicSearch{
+    color: blue;
 }

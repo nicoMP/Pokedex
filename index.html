@@ -17,12 +17,13 @@
         <input type = "text" id="nSearch" placeholder = "Enter Number" class = "SearchBar" oninput="dynamicSearch('nSearch')">
         <button type = "submit" onclick= "submitSearch('nSearch')" class = "SearchBar" >Submit</button>
     </div>
+    <div id ="dynamicSearch"></div>
     <div class="list">
     <ul>
         
         <li id = "firstbox"> 
             <p class = "name"> 01 Bulbasaur </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/1.png" alt = "Image of Bulbasaur"></a></td>
                     <td class="descriptions">There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.</td>
@@ -31,7 +32,7 @@
         </li>   
         <li> 
             <p class = "name"> 02 Ivysaur </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/2.png" alt = "Image of Ivysaur"></a></td>
                     <td class="descriptions">When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.</td>
@@ -39,7 +40,7 @@
             </table>
         </li>             
         <li> 
-            <table>
+            <table class = "static">
                 <p class = "name"> 03 Venusaur </p>
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/3.png" alt = "Image of Venusaur"></a></td>
@@ -49,7 +50,7 @@
         </li>     
         <li> 
             <p class = "name"> 04 Charmander </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/4.png" alt = "Image of Charmander"></a></td>
                     <td class="descriptions">It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.</td>
@@ -58,7 +59,7 @@
         </li>     
         <li> 
             <p class = "name"> 05 Charmeleon </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/5.png" alt = "Image of Charmeleon"></a></td>
                     <td class="descriptions">It has a barbaric nature. In battle, it whips its fiery tail around and slashes away with sharp claws.</td>
@@ -67,7 +68,7 @@
         </li>     
         <li> 
             <p class = "name"> 06 Charizard </p>
-            <table> 
+            <table class = "static"> 
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/6.png" alt = "Image of Charizard"></a></td>
                     <td class="descriptions">It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.</td>
@@ -76,7 +77,7 @@
         </li>     
         <li> 
             <p class = "name"> 07 Squirtle </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/7.png" alt = "Image of Squirtle"></a></td>
                     <td class="descriptions">When it retracts its long neck into its shell, it squirts out water with vigorous force.</td>
@@ -85,7 +86,7 @@
         </li>     
         <li> 
             <p class = "name"> 08 Wartortle </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/8.png" alt = "Image of Wartortle"></a></td>
                     <td class="descriptions">It is recognized as a symbol of longevity. If its shell has algae on it, that Wartortle is very old.</td>
@@ -94,7 +95,7 @@
         </li>     
         <li> 
             <p class = "name"> 09 Blastoise </p>
-            <table>
+            <table class = "static">
                 <tr>
                      
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/9.png" alt = "Image of Blastoise"></a></td>
@@ -104,7 +105,7 @@
         </li>     
         <li> 
             <p class = "name"> 10 Caterpie </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/10.png" alt = "Image of Caterpie"></a></td>
                     <td class="descriptions">For protection, it releases a horrible stench from the antenna on its head to drive away enemies.</td>
@@ -113,7 +114,7 @@
         </li>     
         <li> 
             <p class = "name"> 11 Metapod </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/11.png" alt = "Image of Metapod"></a></td>
                     <td class="descriptions">It is waiting for the moment to evolve. At this stage, it can only harden, so it remains motionless to avoid attack.</td>
@@ -122,7 +123,7 @@
         </li>     
         <li> 
             <p class = "name"> 12 Butterfree </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/12.png" alt = "Image of Butterfree"></a></td>
                     <td class="descriptions">In battle, it flaps its wings at great speed to release highly toxic dust into the air.</td>
@@ -131,7 +132,7 @@
         </li>     
         <li> 
             <p class = "name"> 13 Weedle </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/13.png" alt = "Image of Weedle"></a></td>
                     <td class= "descriptions" >Beware of the sharp stinger on its head. It hides in grass and bushes where it eats leaves.</td>
@@ -140,7 +141,7 @@
         </li>     
         <li>
             <p class = "name"> 14 Kakuna </p> 
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/14.png" alt = "Image of Kakuna"></a></td>
                     <td class="descriptions">Able to move only slightly. When endangered, it may stick out its stinger and poison its enemy.</td>
@@ -149,7 +150,7 @@
         </li>     
         <li> 
             <p class = "name"> 15 Beedrill </p>
-            <table> 
+            <table class = "static"> 
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/15.png" alt = "Image of Beedrill"></a></td>
                     <td class="descriptions">It has three poisonous stingers on its forelegs and its tail.</td>
@@ -158,7 +159,7 @@
         </li>    
         <li> 
             <p class = "name"> 16 Pidgey </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/16.png" alt = "Image of Pidgey"></a></td>
                     <td class="descriptions">Very docile. If attacked, it will often kick up sand to protect itself rather than fight back.</td>
@@ -167,7 +168,7 @@
         </li>      
         <li> 
             <p class = "name"> 17 Pidgeotto </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/17.png" alt = "Image of Pidgeotto"></a></td>
                     <td class="descriptions">This Pokémon is full of vitality. It constantly flies around its large territory in search of prey.</td>
@@ -176,7 +177,7 @@
         </li>     
         <li>
             <p class = "name"> 18 Pidgeot </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/18.png" alt = "Image of Pidgeot"></a></td>
                     <td class="descriptions">This Pokémon flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons.</td>
@@ -185,7 +186,7 @@
         </li>
         <li> 
             <p class = "name"> 19 Rattata </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/19.png" alt = "Image of Rattata"></a></td>
                     <td class="descriptions">Will chew on anything with its fangs. If you see one, you can be certain that 40 more live in the area.</td>
@@ -194,7 +195,7 @@
         </li>       
         <li> 
             <p class = "name"> 20 Raticate </p>
-            <table>
+            <table class = "static">
                 <tr>
                     <td class = "image"><a  href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"><img src = "pokemon/20.png" alt = "Image of Raticate"></a></td>
                     <td class="descriptions">Its hind feet are webbed. They act as flippers, so it can swim in rivers and hunt for prey.</td>
@@ -211,7 +212,7 @@
     function dynamicSearch(type){
         var y = document.getElementById(type).value;
         //alert(y);
-        createTable(type, y);
+        displayTable(type, y);
     } 
     function submitSearch(type){
        var y = document.getElementById(type).value;
