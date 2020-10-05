@@ -25,6 +25,7 @@ p{
     margin-top: 5%;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    height: 100%;
 }
 .searchBar{
     padding-left: 5%;
@@ -51,6 +52,7 @@ li{
     border: solid 8px;
     border-collapse: separate;
     border-radius: 20px;
+    list-style: none;
 
 }
 .name{
@@ -75,5 +77,8 @@ table.static{
     border-bottom-right-radius: 9px;
 }
 #dynamicSearch{
-    color: blue;
+    border: solid 5px black;
+}
+table{
+    margin-top: 0px;
 }

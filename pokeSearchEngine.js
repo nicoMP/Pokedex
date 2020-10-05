@@ -116,10 +116,11 @@ function displaySearch(type, arg){
 function displayTable(type, arg){
     var searchResult = searchEngine(type, arg);
     if(Array.isArray(searchResult)){
-        createTable(searchResult)
+        document.getElementById("dynamicSearch").innerHTML = "";
+        createTable(searchResult);
     }
     else{
-        alert("Hello Dumbass");
+        document.getElementById("dynamicSearch").innerHTML = "";
     }
 
 }
@@ -127,17 +128,29 @@ function displayTable(type, arg){
 function createTable(index){
     alert("hi?");
     var container = document.getElementById("dynamicSearch");
-    var tbl = document.createElement("TABLE");
-    var x = tableParse(index);
-    tbl.innerHTML = x;
-    container.appendChild(tbl);
-
-
-}
-function tableParse(index){
-    var innerhtml = "";
-    for(var i = 0; i < index.length; i++){
-        innerhtml += "<tr>IT WORKED</tr>" ;
+    var list = document.createElement("OL");
+    container.appendChild(list);
+    for (var i = 0; i < index.length;i++){
+        var sel = index[i];
+        var x = document.createElement("LI");
+        list.appendChild(x);
+        var t = document.createElement("TABLE");
+        x.appendChild(t);
+        var tr = document.createElement("TR");
+        t.appendChild(tr);
+        var picT = document.createElement("TD");
+        t.appendChild(picT);
+        var pic = document.createElement("IMG")
+        pic.src = pokemon[sel][3]
+        picT.appendChild(pic);
+        var id = document.createElement("TD");
+        id.innerText = pokemon[sel][0];
+        tr.appendChild(id);
+        var n = document.createElement("TD");
+        n.innerText = pokemon[sel][1];
+        tr.appendChild(n);
+        var d = document.createElement("TD");
+        d.innerText = pokemon[sel][2];
+        tr.appendChild(d);
     }
-    return innerhtml;
 }
