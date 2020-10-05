@@ -26,7 +26,7 @@ function searchEngine(type, arg){
         if(validity == "valid"){//it checks if it's a valid input then depending on the type calls the respective search functions
             switch(type){
                 case "lSearch":
-                    return retrieveByName(arg);//either one returns and array with the adress in the pokemon array
+                    return retrieveByName(arg);//either one returns and array with the adress of a pokemon in the pokemon array
                 case "nSearch":
                      return retrieveByNumber(arg);
                 default:
@@ -113,3 +113,13 @@ function displaySearch(type, arg){
     window.alert(x);
 }
 
+function createTable(type, arg){
+    var searchResult = searchEngine(type, arg);
+    alert(arg.concat(type));
+    if(Array.isArray(searchResult)){
+        alert("Hello Ass");
+    }
+    else{
+        alert("Hello Dumbass");
+    }
+}
