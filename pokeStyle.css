@@ -53,6 +53,7 @@ li{
     border-collapse: separate;
     border-radius: 20px;
     list-style: none;
+    overflow: hidden;
 
 }
 .name{
@@ -75,6 +76,7 @@ table.static{
     background-color: beige;
     border-bottom-left-radius: 9px;
     border-bottom-right-radius: 9px;
+    overflow: hidden;
 }
 ol.container{
     border-style: none;
